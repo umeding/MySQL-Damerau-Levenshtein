@@ -1,0 +1,21 @@
+
+Install steps:
+
+1. Compile the Damerau/Levenshtein calculator
+
+2. Install shared library in /usr/lib/mysql (or /usr/local/lib/mysql)
+
+3. Make sure 'ldconfig' is setup
+
+   % cp mysql.ld.so.conf /etc/ld.so.conf.d
+   % ldconfig
+
+4. Start the mysql client and register the function:
+
+   % mysql -u ... --password=... ...
+      ...
+   mysql> source dameraulevenshtein.sql
+      ...
+   mysql> \q
+
+
